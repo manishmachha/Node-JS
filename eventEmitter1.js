@@ -12,8 +12,7 @@ var lis2 = function listener2() {
 eventEmitter.on("listener", lis1);
 eventEmitter.on("listener", lis2);
 
-var eventListeners = require("events").EventEmitter.listenerCount(
-  eventEmitter,"listener");
+var eventListeners = event.EventEmitter.listenerCount(eventEmitter, "listener");
 
 console.log(eventListeners + " Listner(s) listening to listener event");
 
@@ -21,10 +20,7 @@ eventEmitter.emit("listener");
 
 eventEmitter.removeListener("listener", lis1);
 
-eventListeners = require("events").EventEmitter.listenerCount(
-  eventEmitter,
-  "listener"
-);
+eventListeners = event.EventEmitter.listenerCount(eventEmitter, "listener");
 console.log(eventListeners + " Listner(s) listening to listener event");
 
 eventEmitter.emit("listener");
